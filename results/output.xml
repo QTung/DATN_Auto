@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-11-14T14:31:05.537470" rpa="false" schemaversion="5">
+<suite id="s1" name="DATN-Auto" source="D:\DATN-Auto">
+<suite id="s1-s1" name="SignUp" source="D:\DATN-Auto\SignUp.robot">
+<test id="s1-s1-t1" name="Invalid Password Confirm" line="49">
+<kw name="opening the website" owner="Resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:05.750740" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<arg>http://localhost:3000/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-14T14:31:05.750740" elapsed="3.219948"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:05.749742" elapsed="3.220946"/>
+</kw>
+<kw name="click the sign up link" owner="Resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Đăng ký']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-14T14:31:08.971685" elapsed="0.438885"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.410570" level="INFO">Clicking element 'css=a[href='/dang-ky']'.</msg>
+<arg>css=a[href='/dang-ky']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.410570" elapsed="0.194480"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:08.971685" elapsed="0.633365"/>
+</kw>
+<kw name="inputting fullname" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.607045" level="INFO">Clicking element '//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[1]/div/div'.</msg>
+<arg>//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[1]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.606048" elapsed="0.044880"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.651926" level="INFO">Sending key(s) ('abcd',) to page.</msg>
+<msg time="2024-11-14T14:31:09.651926" level="INFO">Sending keys abcd</msg>
+<arg>None</arg>
+<arg>${char}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.651926" elapsed="0.049867"/>
+</kw>
+<var name="${char}">abcd</var>
+<status status="PASS" start="2024-11-14T14:31:09.650928" elapsed="0.050865"/>
+</iter>
+<var>${char}</var>
+<value>${fullname}</value>
+<status status="PASS" start="2024-11-14T14:31:09.650928" elapsed="0.050865"/>
+</for>
+<arg>abcd</arg>
+<status status="PASS" start="2024-11-14T14:31:09.606048" elapsed="0.095745"/>
+</kw>
+<kw name="select gender" owner="Resources">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${gender}' == 'Nam'</arg>
+<arg>Click Element</arg>
+<arg>//input[@value='0']</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.702789" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.703786" level="INFO">Clicking element '//input[@value='1']'.</msg>
+<arg>//input[@value='1']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.703786" elapsed="0.090757"/>
+</kw>
+<arg>'${gender}' == 'Nữ'</arg>
+<arg>Click Element</arg>
+<arg>//input[@value='1']</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.703786" elapsed="0.091761"/>
+</kw>
+<arg>Nữ</arg>
+<status status="PASS" start="2024-11-14T14:31:09.702789" elapsed="0.092758"/>
+</kw>
+<kw name="inputting username" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.798534" level="INFO">Clicking element '//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div/div'.</msg>
+<arg>//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[3]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.797538" elapsed="0.077790"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.876326" level="INFO">Sending key(s) ('abc123',) to page.</msg>
+<msg time="2024-11-14T14:31:09.876326" level="INFO">Sending keys abc123</msg>
+<arg>None</arg>
+<arg>${char}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.875328" elapsed="0.066823"/>
+</kw>
+<var name="${char}">abc123</var>
+<status status="PASS" start="2024-11-14T14:31:09.875328" elapsed="0.066823"/>
+</iter>
+<var>${char}</var>
+<value>${username}</value>
+<status status="PASS" start="2024-11-14T14:31:09.875328" elapsed="0.066823"/>
+</for>
+<arg>abc123</arg>
+<status status="PASS" start="2024-11-14T14:31:09.796548" elapsed="0.145603"/>
+</kw>
+<kw name="inputting password" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.944143" level="INFO">Clicking element '//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[4]/div/div'.</msg>
+<arg>//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[4]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.943147" elapsed="0.048869"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:09.993041" level="INFO">Sending key(s) ('abcs',) to page.</msg>
+<msg time="2024-11-14T14:31:09.993041" level="INFO">Sending keys abcs</msg>
+<arg>None</arg>
+<arg>${char}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-11-14T14:31:09.992016" elapsed="0.047871"/>
+</kw>
+<var name="${char}">abcs</var>
+<status status="PASS" start="2024-11-14T14:31:09.992016" elapsed="0.047871"/>
+</iter>
+<var>${char}</var>
+<value>${password}</value>
+<status status="PASS" start="2024-11-14T14:31:09.992016" elapsed="0.047871"/>
+</for>
+<arg>abcs</arg>
+<status status="PASS" start="2024-11-14T14:31:09.943147" elapsed="0.097738"/>
+</kw>
+<kw name="inputting confirm password" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:10.041882" level="INFO">Clicking element '//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[5]/div/div'.</msg>
+<arg>//*[@id="root"]/div/div/div[2]/div/div/div[2]/div[2]/div/form/div[5]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:10.040885" elapsed="0.052873"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:10.100748" level="INFO">Sending key(s) ('acxza',) to page.</msg>
+<msg time="2024-11-14T14:31:10.103735" level="INFO">Sending keys acxza</msg>
+<arg>None</arg>
+<arg>${char}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-11-14T14:31:10.098749" elapsed="0.059354"/>
+</kw>
+<var name="${char}">acxza</var>
+<status status="PASS" start="2024-11-14T14:31:10.096750" elapsed="0.061353"/>
+</iter>
+<var>${char}</var>
+<value>${confirm_password}</value>
+<status status="PASS" start="2024-11-14T14:31:10.095761" elapsed="0.062342"/>
+</for>
+<arg>acxza</arg>
+<status status="PASS" start="2024-11-14T14:31:10.040885" elapsed="0.117218"/>
+</kw>
+<kw name="click the sign up button" owner="Resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-14T14:31:12.159498" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-14T14:31:10.159100" elapsed="2.000398"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@type='submit' and @tabindex='0']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-14T14:31:12.160496" elapsed="0.013977"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-14T14:31:12.174473" level="INFO">Clicking element 'xpath=//button[@type='submit' and @tabindex='0']'.</msg>
+<arg>xpath=//button[@type='submit' and @tabindex='0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-14T14:31:12.174473" elapsed="0.045864"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:10.158103" elapsed="2.062234"/>
+</kw>
+<kw name="password confirm doesn't match" owner="Resources">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Không khớp mật khẩu!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-14T14:31:12.221333" elapsed="0.013978"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:12.221333" elapsed="0.013978"/>
+</kw>
+<kw name="closing the browser" owner="Resources">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-14T14:31:12.236294" elapsed="2.123815"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:12.236294" elapsed="2.123815"/>
+</kw>
+<status status="PASS" start="2024-11-14T14:31:05.748745" elapsed="8.612358"/>
+</test>
+<status status="PASS" start="2024-11-14T14:31:05.563402" elapsed="8.798698"/>
+</suite>
+<status status="PASS" start="2024-11-14T14:31:05.541460" elapsed="8.821638"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="DATN-Auto">DATN-Auto</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="SignUp">DATN-Auto.SignUp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
